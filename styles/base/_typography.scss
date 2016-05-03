@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(120deg, #551a9a,  #7F00EC 40%, #551a9f) fixed;
+  background: linear-gradient(120deg, #551a9a,  #7F00EC 40%, magenta) fixed;
 }
 #navbar{
   h1{
@@ -9,8 +9,6 @@ body {
       family: Fantasy;
     }
   }
-}
-#navbar {
   h2 {
     color: $sexyFont;
     text-align: center;
@@ -19,26 +17,59 @@ body {
     }
   }
 }
+aside {
+  float: right;
+  width: 37%;
+  color: white;
+}
+#genreDescription {
+  text-align: left;
+}
+.topSect {
+  color: $sexyFont;
+}
+.summary{
+  float: left;
+  display: inline-block;
+  position: static;
+
+}
+.img {
+  display: block;
+  float: left;
+  padding-right: 2px;
+}
+.instructions {
+  text-align: center;
+}
 section {
-  h3{
-    text-align: center;
-    color: $sexyFont;
+  ul{
+    text-align: left;
+    color: #00d6f7;
+    font-size: 1em;
+    list-style-type: none;
   }
 }
+#buttonInfo {
+  text-align: center;
+}
 #search {
-  margin-left: 41%;
   text-align: center;
   padding:8px 15px;
-  background: white;
+  background: $sexyFont;
   border:2px solid #00d6f7;
-  color: black;
+  color: purple;
   font: {
     size: 20px;
   }
 }
-
+.bottomSect {
+  color: $sexyFont;
+  float: left;
+  width: 60%;
+}
 #searchButton {
-  margin-left: 46%;
+  text-align: center;
 	-moz-box-shadow: 0px 10px 31px -6px #00d6f7;
 	-webkit-box-shadow: 0px 10px 31px -6px #00d6f7;
 	box-shadow: 0px 10px 31px -6px #00d6f7;

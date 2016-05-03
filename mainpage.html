@@ -9,16 +9,29 @@
 </head>
 <body>
   <div id="navbar"><h1>Musical Genre Appreciation</h1><h2>Be hip. Learn about genres!</h2></div>
-    <section>
-      <h3> Type in a genre in the search bar! </h3>
-      <br><br><br><br>
-      <label for="search">
-      <input type="search" name="search" id="search">
-      </label>
-      <br><br>
-      <button id="searchButton">Go!</button>
-        <h3 id="topArtist">The top artists for this genre are: </h3>
-    </section>
+  <section class= "topSect">
+    <h3 class='instructions'> Type in a genre in the search bar! </h3>
+    <br><br><br>
+    <div id="buttonInfo">
+    <label for="search">
+    <input type="search" name="search" id="search">
+    </label>
+    <br><br>
+    <button id="searchButton">Go!</button>
+    </div>
+  </section>
+    <br><br>
+  <section class='bottomSect'>
+    <h3 id="genreDescription"></h3>
+    <h3><ul id="topArtist"></h3>
+  </section>
+  <aside>
+    <div id='artistInfo'>
+      <div class='summary'></div>
+      <div class='img'></div>
+      <div class='media'></div>
+    </div>
+  </aside>
 
 </body>
 </html>
