@@ -1,25 +1,26 @@
 body {
-  background: linear-gradient(120deg, #551a9a, #7F00EC 40%, magenta) fixed; }
+  background: #002F32; }
 
 #navbar h1 {
-  color: white;
+  color: #E6E2AF;
   text-align: center;
-  font-family: Fantasy; }
+  font-family: Helvetica; }
 #navbar h2 {
-  color: white;
+  color: #E6E2AF;
   text-align: center;
-  font-family: Harrington; }
+  font-family: fantasy; }
 
 aside {
   float: right;
   width: 37%;
-  color: white; }
+  color: #EFECCA;
+  text-align: justify; }
 
 #genreDescription {
-  text-align: left; }
+  text-align: justify; }
 
 .topSect {
-  color: white; }
+  color: #EFECCA; }
 
 .summary {
   float: left;
@@ -36,9 +37,11 @@ aside {
 
 section ul {
   text-align: left;
-  color: #00d6f7;
+  color: #A7A37E;
   font-size: 1em;
-  list-style-type: none; }
+  list-style-type: none;
+  padding: 1em;
+  font-family: Fantasy; }
 
 #buttonInfo {
   text-align: center; }
@@ -46,15 +49,21 @@ section ul {
 #search {
   text-align: center;
   padding: 8px 15px;
-  background: white;
+  background: #E6E2AF;
   border: 2px solid #00d6f7;
-  color: purple;
+  color: #C84663;
   font-size: 20px; }
 
 .bottomSect {
-  color: white;
+  color: #EFECCA;
   float: left;
-  width: 60%; }
+  width: 60%;
+  text-align: justify; }
+
+li:hover {
+  color: #EFECCA; }
+li:active {
+  color: #C84663; }
 
 #searchButton {
   text-align: center;

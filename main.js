@@ -1,4 +1,9 @@
 $(document).ready(function(){
+  $("#search").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#searchButton").click();
+    }
+  });
   $("#topArtist").click(function(){
     var bandName = $(event.target).text();
     $('.summary').empty();
@@ -15,8 +20,8 @@ $(document).ready(function(){
         $(".media").append(spotifyButton)
       }
     });
-    jQuery.ajax({
-      url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+ bandName + '&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
+    $.ajax({
+      url: 'https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+ bandName + '&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
       method: 'GET',
       dataType: 'json',
       success: function(data){
@@ -34,7 +39,7 @@ $(document).ready(function(){
       $('#topArtist').empty();
     if(text){
       $.ajax({
-        url: 'http://ws.audioscrobbler.com/2.0/?method=tag.getinfo&tag='+ text + '&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
+        url: 'https://ws.audioscrobbler.com/2.0/?method=tag.getinfo&tag='+ text + '&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
         method: 'GET',
         success: function(data){
           e.preventDefault();
@@ -43,14 +48,29 @@ $(document).ready(function(){
         }
       }),
       $.ajax({
-        url:'http://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag='+text+'&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
+        url:'https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag='+text+'&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
         method: 'GET',
         success: function(data){
         e.preventDefault();
           for(var i=0; i<9; i++){
             var artistNames = (data["topartists"]["artist"][i]["name"]);
-              $("#topArtist").append("<li>" + artistNames + "</li>");
+            var $element = $('<li>');
+            $element.text(artistNames);
+            $element.attr('data-artist', artistNames);
+
+            $("#topArtist").append($element);
           }
+          function addClickForArtist() {
+            var els = $('li');
+
+            for (var i = 0; i < els.length; i++) {
+              $(els[i]).click(function(e) {
+                console.log($(e.target).data('artist'));
+              })
+            }
+          }
+
+        addClickForArtist();
         }
       });
     }
