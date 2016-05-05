@@ -1,14 +1,17 @@
 body {
-  background: #002F32; }
+  background: #002F2F; }
+
+#artistInfoSmall {
+  display: none; }
 
 #navbar h1 {
   color: #E6E2AF;
   text-align: center;
   font-family: Helvetica; }
-#navbar h2 {
+#navbar h3 {
   color: #E6E2AF;
   text-align: center;
-  font-family: fantasy; }
+  font-family: Helvetica; }
 
 aside {
   float: right;
@@ -41,7 +44,7 @@ section ul {
   font-size: 1em;
   list-style-type: none;
   padding: 1em;
-  font-family: Fantasy; }
+  font-family: Helvetica; }
 
 #buttonInfo {
   text-align: center; }
@@ -51,7 +54,7 @@ section ul {
   padding: 8px 15px;
   background: #E6E2AF;
   border: 2px solid #00d6f7;
-  color: #C84663;
+  color: #046380;
   font-size: 20px; }
 
 .bottomSect {
@@ -103,5 +106,24 @@ li:active {
   #searchButton:active {
     position: relative;
     top: 1px; }
+
+@media (max-width: 800px) {
+  .bottomSect {
+    display: block;
+    width: 100%; } }
+@media (max-width: 800px) {
+  #genreDescription {
+    display: block;
+    text-align: center; } }
+@media (max-width: 800px) {
+  section ul {
+    display: block;
+    text-align: center; } }
+@media (max-width: 800px) {
+  aside {
+    text-align: center;
+    width: 100%; }
+    aside .img {
+      display: none; } }
 
 /*# sourceMappingURL=styles.css.map */

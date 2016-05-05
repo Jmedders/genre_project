@@ -1,11 +1,35 @@
 $(document).ready(function(){
+  $("#localStorageTest").submit(function(e) {
+    e.preventDefault();
+});
+  function init() {
+    if (localStorage["search"]) {
+        $('#search').val(localStorage["search"]);
+       }
+    }
+  init();
+
+  $('.stored').keyup(function () {
+      localStorage[$(this).attr('search')] = $(this).val();
+  });
+  $('#localStorageTest').submit(function() {
+      localStorage.clear();
+  });
   $("#search").keyup(function(event){
     if(event.keyCode == 13){
         $("#searchButton").click();
     }
   });
   $("#topArtist").click(function(){
-    var bandName = $(event.target).text();
+    bandName = $(event.target).text();
+    checkSize();
+    $(window).resize(checkSize);
+    function checkSize(){
+      if ($("#genreDescription").css("text-align") == "center"){
+        $(event.target).append($('aside'));
+        $('aside').css('border-top', '0.15em solid #EFECCA');
+      }
+    }
     $('.summary').empty();
     $('.media').empty();
     $('.img').empty();
@@ -14,9 +38,7 @@ $(document).ready(function(){
       method: 'GET',
       success: function(data){
         var spotifyLink = (data["artists"]["items"][0]["external_urls"]["spotify"]);
-        console.log(spotifyLink);
         var spotifyButton = ('<iframe src="https://embed.spotify.com/?uri=' + spotifyLink + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
-        console.log(spotifyButton);
         $(".media").append(spotifyButton)
       }
     });
@@ -55,9 +77,10 @@ $(document).ready(function(){
           for(var i=0; i<9; i++){
             var artistNames = (data["topartists"]["artist"][i]["name"]);
             var $element = $('<li>');
+            //setting element var text to list
             $element.text(artistNames);
+            //setting element attribute to list
             $element.attr('data-artist', artistNames);
-
             $("#topArtist").append($element);
           }
           function addClickForArtist() {
@@ -65,7 +88,7 @@ $(document).ready(function(){
 
             for (var i = 0; i < els.length; i++) {
               $(els[i]).click(function(e) {
-                console.log($(e.target).data('artist'));
+                // console.log($(e.target).data('artist'));
               })
             }
           }

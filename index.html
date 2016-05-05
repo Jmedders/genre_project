@@ -5,22 +5,25 @@
   <title>Genres</title>
   <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
   <script src="main.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div id="navbar"><h1>Sound Styles</h1><h2>Discover, Listen, Learn</h2></div>
+  <div id="navbar"><h1>Sound Explorer</h1><h3><em>Discover, Listen, Learn</em></h3></div>
   <section class= "topSect">
-    <h3 class='instructions'> Enter a genre below: </h3>
     <br>
+    <form action="" id="localStorageTest">
     <div id="buttonInfo">
     <label for="search">
-    <input type="search" name="search" id="search">
+    <input type="search" name="search" id="search" value="" class="stored" placeholder="Enter a genre here">
     </label>
     <br><br>
     <button id="searchButton">Go!</button>
     </div>
+    </form>
   </section>
-    <br><br>
+
+  <br><br>
   <section class='bottomSect'>
     <h3 id="genreDescription"></h3>
     <h3><ul id="topArtist"></h3>
@@ -31,6 +34,11 @@
       <div class='img'></div>
       <div class='media'></div>
     </div>
+    <!-- <div id='artistInfoSmall'>
+      <div class='summary'></div>
+      <div class='img'></div>
+      <div class='media'></div>
+    </div> -->
   </aside>
 
 </body>

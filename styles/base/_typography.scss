@@ -1,5 +1,8 @@
 body {
-  background: #002F32;
+  background: #002F2F
+}
+#artistInfoSmall{
+  display: none;
 }
 #navbar{
   h1{
@@ -9,11 +12,11 @@ body {
       family: Helvetica;
     }
   }
-  h2 {
+  h3 {
     color: #E6E2AF;
     text-align: center;
     font:{
-      family: fantasy;
+      family: Helvetica;
     }
   }
 }
@@ -50,7 +53,7 @@ section {
     font-size: 1em;
     list-style-type: none;
     padding: 1em;
-    font-family: Fantasy;
+    font-family: Helvetica;
   }
 }
 #buttonInfo {
@@ -61,7 +64,7 @@ section {
   padding:8px 15px;
   background: #E6E2AF;
   border:2px solid #00d6f7;
-  color: #C84663;
+  color: #046380;
   font: {
     size: 20px;
   }
