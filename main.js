@@ -7,18 +7,12 @@ $(document).ready(function(){
         $('#search').val(localStorage["search"]);
        }
     }
-  init();
 
   $('.stored').keyup(function () {
       localStorage[$(this).attr('search')] = $(this).val();
   });
   $('#localStorageTest').submit(function() {
       localStorage.clear();
-  });
-  $("#search").keyup(function(event){
-    if(event.keyCode == 13){
-        $("#searchButton").click();
-    }
   });
   $("#topArtist").click(function(){
     bandName = $(event.target).text();
@@ -28,6 +22,11 @@ $(document).ready(function(){
       if ($("#genreDescription").css("text-align") == "center"){
         $(event.target).append($('aside'));
         $('aside').css('border-top', '0.15em solid #EFECCA');
+        // $(event.target).append('<br>');
+        // $(event.target).append($('.img'));
+        // $(event.target).append($('.summary'));
+        // $(event.target).append($('.media'));
+       //  $('body').css('background', "teal");
       }
     }
     $('.summary').empty();
@@ -77,10 +76,9 @@ $(document).ready(function(){
           for(var i=0; i<9; i++){
             var artistNames = (data["topartists"]["artist"][i]["name"]);
             var $element = $('<li>');
-            //setting element var text to list
             $element.text(artistNames);
-            //setting element attribute to list
             $element.attr('data-artist', artistNames);
+
             $("#topArtist").append($element);
           }
           function addClickForArtist() {
