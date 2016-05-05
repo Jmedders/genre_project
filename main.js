@@ -14,24 +14,23 @@ $(document).ready(function(){
   $('#localStorageTest').submit(function() {
       localStorage.clear();
   });
-  $("#topArtist").click(function(){
+
+  $("#topArtist").click(function(event){
     bandName = $(event.target).text();
+
     checkSize();
     $(window).resize(checkSize);
     function checkSize(){
       if ($("#genreDescription").css("text-align") == "center"){
         $(event.target).append($('aside'));
         $('aside').css('border-top', '0.15em solid #EFECCA');
-        // $(event.target).append('<br>');
-        // $(event.target).append($('.img'));
-        // $(event.target).append($('.summary'));
-        // $(event.target).append($('.media'));
-       //  $('body').css('background', "teal");
       }
     }
+
     $('.summary').empty();
     $('.media').empty();
     $('.img').empty();
+
     $.ajax({
       url: 'https://api.spotify.com/v1/search?query=' + bandName + '&offset=0&limit=20&type=artist',
       method: 'GET',
@@ -41,6 +40,7 @@ $(document).ready(function(){
         $(".media").append(spotifyButton)
       }
     });
+
     $.ajax({
       url: 'https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+ bandName + '&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
       method: 'GET',
@@ -54,11 +54,13 @@ $(document).ready(function(){
       }
     })
   });
+
   $('#searchButton').on('click', function(e){
     var text = $('#search').val();
       $('#genreDescription').empty();
       $('#topArtist').empty();
     if(text){
+
       $.ajax({
         url: 'https://ws.audioscrobbler.com/2.0/?method=tag.getinfo&tag='+ text + '&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
         method: 'GET',
@@ -68,6 +70,7 @@ $(document).ready(function(){
           $("#genreDescription").append(genreDescribe + "<br/>" + "<br/>" + "The most tagged artists for this genre are:");
         }
       }),
+
       $.ajax({
         url:'https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag='+text+'&api_key=fc169e28c0fedab5b7d93101e7f4c0d2&format=json',
         method: 'GET',
