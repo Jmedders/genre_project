@@ -108,6 +108,12 @@ li:active {
     top: 1px; }
 
 @media (max-width: 800px) {
+  #artistInfo {
+    display: none; } }
+@media (min-width: 800px) {
+  #artistInfoSmall {
+    display: none; } }
+@media (max-width: 800px) {
   .bottomSect {
     display: block;
     width: 100%; } }
@@ -119,6 +125,10 @@ li:active {
   section ul {
     display: block;
     text-align: center; } }
+@media (max-width: 800px) {
+  #artistInfoSmall {
+    display: inline-block;
+    border-top: 0.15em solid #EFECCA; } }
 @media (max-width: 800px) {
   aside {
     text-align: center;

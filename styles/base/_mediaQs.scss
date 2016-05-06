@@ -26,6 +26,22 @@
 //     width: 60%;
 //   }
 // }
+
+@media(max-width: 800px){
+  #artistInfo {
+    display: none;
+  }
+}
+@media(min-width: 800px){
+  #artistInfoSmall {
+    display: none;
+  }
+}
+// @media(max-width: 800px){
+//   #artistInfoSmall {
+//     display: inline-block;
+//   }
+// }
 @media(max-width: 800px){
   .bottomSect {
     display: block;
@@ -43,7 +59,21 @@
     ul {
     display: block;
     text-align: center;
+    // li {
+    //   &:hover {
+    //     #artistInfoSmall {
+    //       display: inline-block;
+    //       border-top: 0.15em solid #EFECCA;
+    //     }
+    //   }
+    // }
     }
+  }
+}
+@media(max-width: 800px){
+  #artistInfoSmall {
+    display: inline-block;
+    border-top: 0.15em solid #EFECCA;
   }
 }
 @media(max-width: 800px){

@@ -17,15 +17,7 @@ $(document).ready(function(){
 
   $("#topArtist").click(function(event){
     bandName = $(event.target).text();
-
-    checkSize();
-    $(window).resize(checkSize);
-    function checkSize(){
-      if ($("#genreDescription").css("text-align") == "center"){
-        $(event.target).append($('aside'));
-        $('aside').css('border-top', '0.15em solid #EFECCA');
-      }
-    }
+    $(event.target).append($('#artistInfoSmall'));
 
     $('.summary').empty();
     $('.media').empty();
@@ -47,7 +39,6 @@ $(document).ready(function(){
       dataType: 'json',
       success: function(data){
         var bandWiki = ((data)["artist"]["bio"]["summary"]);
-        // var imgText = JSON.stringify("#text");
         var bandPic = ((data)["artist"]["image"][2]["#text"]);
         $('.summary').append("<h3>" + bandWiki + "</h3>");
         $('.img').append('<img id="bandImg" src=' + bandPic + '/>')
@@ -89,7 +80,6 @@ $(document).ready(function(){
 
             for (var i = 0; i < els.length; i++) {
               $(els[i]).click(function(e) {
-                // console.log($(e.target).data('artist'));
               })
             }
           }
