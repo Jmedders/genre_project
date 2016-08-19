@@ -1,16 +1,18 @@
 $(document).ready(function(){
   $("#localStorageTest").submit(function(e) {
     e.preventDefault();
-});
+  });
+
   function init() {
     if (localStorage["search"]) {
-        $('#search').val(localStorage["search"]);
-       }
+      $('#search').val(localStorage["search"]);
     }
+  }
 
   $('.stored').keyup(function () {
       localStorage[$(this).attr('search')] = $(this).val();
   });
+
   $('#localStorageTest').submit(function() {
       localStorage.clear();
   });
@@ -18,10 +20,11 @@ $(document).ready(function(){
   $("#topArtist").click(function(event){
     bandName = $(event.target).text();
     $(event.target).append($('#artistInfoSmall'));
-
-    $('.summary').empty();
+    var $summary = $('summary');
+    var $img = $('img');
+    $summary.empty();
     $('.media').empty();
-    $('.img').empty();
+    $img.empty();
 
     $.ajax({
       url: 'https://api.spotify.com/v1/search?query=' + bandName + '&offset=0&limit=20&type=artist',
@@ -40,8 +43,8 @@ $(document).ready(function(){
       success: function(data){
         var bandWiki = ((data)["artist"]["bio"]["summary"]);
         var bandPic = ((data)["artist"]["image"][2]["#text"]);
-        $('.summary').append("<h3>" + bandWiki + "</h3>");
-        $('.img').append('<img id="bandImg" src=' + bandPic + '/>')
+        $summary.append("<h3>" + bandWiki + "</h3>");
+        $img.append('<img id="bandImg" src=' + bandPic + '/>')
       }
     })
   });
