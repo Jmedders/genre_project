@@ -1,5 +1,7 @@
 body {
   background: #002F2F; }
+  body a:visited {
+    color: #C84663; }
 
 #artistInfoSmall {
   display: none; }
@@ -15,7 +17,7 @@ body {
 
 aside {
   float: right;
-  width: 37%;
+  width: 38%;
   color: #EFECCA;
   text-align: justify; }
 
@@ -79,7 +81,7 @@ li:active {
   background: -o-linear-gradient(top, #2d3133 5%, #19c8e3 100%);
   background: -ms-linear-gradient(top, #2d3133 5%, #19c8e3 100%);
   background: linear-gradient(to bottom, #2d3133 5%, #19c8e3 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d3133', endColorstr='#19c8e3',GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d3133', endColorstr='$mainButtonColor',GradientType=0);
   background-color: #2d3133;
   -moz-border-radius: 17px;
   -webkit-border-radius: 17px;
@@ -101,7 +103,7 @@ li:active {
     background: -o-linear-gradient(top, #19c8e3 5%, #2d3133 100%);
     background: -ms-linear-gradient(top, #19c8e3 5%, #2d3133 100%);
     background: linear-gradient(to bottom, #19c8e3 5%, #2d3133 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#19c8e3', endColorstr='#2d3133',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$mainButtonColor', endColorstr='$secondaryButtonColor',GradientType=0);
     background-color: #19c8e3; }
   #searchButton:active {
     position: relative;
